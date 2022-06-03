@@ -1,0 +1,19 @@
+{{page-title "Login"}}
+
+{{page-title "Login"}}
+<ul class="nav-bar">
+    <li class="nav-item"><LinkTo class="nav-ele" @route="index">Home</LinkTo></li>
+    <li class="nav-item"><LinkTo class="nav-ele" @route="admin-login">Admin Login</LinkTo></li>
+    <li class="nav-item"><LinkTo class="nav-ele" @route="login">Candidate Login</LinkTo></li>
+</ul>
+<div class="container">
+    <form method="post" action="http://localhost:8080/PRM_portal/login">
+        <center><h2>Log In</h2></center>
+        <p>Email-Id: </p>
+        <input type="text" name="email" class="text-box"required><br>
+        <p>Password:</p>
+        <input type="password" name="pass" class="text-box" required/><br><br>
+        <input type="hidden" name="class" value="candidate" />
+        <center><input class="button" type="submit" value="LogIn" class="button"></center>
+    </form>
+</div>

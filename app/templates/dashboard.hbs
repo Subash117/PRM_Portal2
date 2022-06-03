@@ -1,0 +1,28 @@
+{{page-title "Dashboard"}}
+<h1>Candidate Dashboard</h1>
+<form style="float:right;" action="http://localhost:8080/PRM_portal/logout">
+    <input class="button" type="submit" value="LogOut" />
+</form>
+
+<h2>Questions</h2>
+
+<table>
+    <tr>
+        <th>S.No</th>
+        <th>Link</th>
+    </tr>
+
+    {{#each @model.questions as |q|}}
+    <tr>
+        <td>Question : {{q.no}}</td>
+        <td>
+            <center>
+            <form action="http://localhost:8080/PRM_portal/setanswer" target="_blank">
+                <input type="hidden" value={{q.id}} name="qno"/>
+                <button >Click to View</button>
+            </form>
+            </center>
+        </td> 
+    </tr>
+    {{/each}}
+</table>

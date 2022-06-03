@@ -1,0 +1,28 @@
+{{page-title "Allresults"}}
+
+<h1>Results Page</h1>
+
+<table>
+    <tr>
+        <th></th>
+        {{#each @model.questions as |question|}}
+            <th colspan="2">{{question}}</th>
+        {{/each}}
+    </tr>
+    <tr>
+        <th>Candidates</th>
+        {{#each @model.questions as |question|}}
+            <th>Start Time</th>
+            <th>End Time</th>
+        {{/each}}
+    </tr>
+    {{#each @model.results as |results|}}
+    <tr>
+        <td>{{results.name}}</td>
+        {{#each results.result as |result|}}
+            <td>{{result.start_time}}</td>
+            <td>{{result.end_time}}</td>
+        {{/each}}
+    </tr>
+    {{/each}}
+</table>
